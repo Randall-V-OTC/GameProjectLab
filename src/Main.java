@@ -83,20 +83,20 @@ public class Main {
                                 resetToMain = true;
                                 break;
                             case "3": // QUIT THE GAME
-                                System.out.println("Thanks for playing!");
+                                quitGame = true;
+                                System.out.println("Sorry to see you go :(");
                                 break;
                         }
-                        if (resetToMain) break; // BREAK OUT IF USER CHOOSES THEY WANT TO CHANGE SOMETHING
+                        if (resetToMain || quitGame) break; // BREAK OUT IF USER CHOOSES THEY WANT TO CHANGE SOMETHING
                     }
 
                 }
             }
 
-            if (gameComplete) {
+            if (gameComplete || quitGame) {
+                if (quitGame) break; // break out and quit the game
                 displayEndingDetails(player);
             }
-
-            if (quitGame) break; // break out of the user selects to quit
         }
     }
 
